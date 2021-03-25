@@ -21,8 +21,6 @@ class PeriodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        periodDBManager.createDB()
-        
         periodDBManager.createPeriodTable()
         
         periodList = periodDBManager.getPeriods()
@@ -37,14 +35,13 @@ class PeriodTableViewController: UITableViewController {
     // Runs when save button in PeriodViewController is pressed
     @IBAction func refreshList(sender: UIStoryboardSegue) {
         
-        if let sourceViewController = sender.source as? PeriodViewController, let task = sourceViewController.task {
+        /*if let sourceViewController = sender.source as? PeriodViewController, let task = sourceViewController.task {
             
             let taskManager = TaskDBManager()
-            taskManager.createDB()
             taskManager.createTaskTable()
             taskManager.addTask(task.name, task.timeRequired, task.deadline)
             taskManager.getTasks()
-        }
+        }*/
         
         // Refresh list when user returns to main menu
         refreshPeriodList()
@@ -83,6 +80,7 @@ class PeriodTableViewController: UITableViewController {
     private func refreshPeriodList() {
         
         periodList = periodDBManager.getPeriods()
+        
         // Updates table view
         self.tableView.reloadData()
     }

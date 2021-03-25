@@ -27,6 +27,8 @@ class TaskDBManager: DBManager {
     // Creates table
     func createTaskTable() {
         
+        createDB()
+        
         do {
             try db!.run(tasks.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
@@ -54,6 +56,9 @@ class TaskDBManager: DBManager {
         } catch {
             print("Failed to add task: \(error)")
         }
+        
+        let scheduler = Scheduler()
+        scheduler.add(name: taskName, lengthRequired: timeRequired)
     }
     
     func getTasks() -> [Task] {

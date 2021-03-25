@@ -22,6 +22,8 @@ class PeriodDBManager: DBManager {
     // Creates table
     func createPeriodTable() {
         
+        createDB()
+        
         do {
             try db!.run(periods.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)

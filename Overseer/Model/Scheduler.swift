@@ -23,11 +23,10 @@ struct Scheduler {
         numberOfPeriodsWithDecimal.round(.up)
         
         // Number of periods needed for task to be finished
-        var numberOfPeriods: Int = Int(numberOfPeriodsWithDecimal)
+        let numberOfPeriods: Int = Int(numberOfPeriodsWithDecimal)
         
-        var periodDBManager = PeriodDBManager()
+        let periodDBManager = PeriodDBManager()
         
-        periodDBManager.createDB()
         periodDBManager.createPeriodTable()
         
         for i in 1...numberOfPeriods {
