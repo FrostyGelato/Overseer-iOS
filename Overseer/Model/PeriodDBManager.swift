@@ -24,17 +24,17 @@ class PeriodDBManager: DBManager {
         do {
             try db!.run(periods.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
-                t.column(name, unique: true)
+                t.column(name)
             })
         } catch {
             print("Failed to create Period table: \(error)")
         }
     }
     
-    func addPeriod(_ periodName: String, _ periodDate: String, _ startTime: String, _ endTime: String) {
+    func addPeriod(_ periodName: String) {
         
         do {
-            try db!.run(periods.insert(name <- periodName, date <- periodDate, start <- startTime, end <- endTime))
+            try db!.run(periods.insert(name <- periodName))
         } catch {
             print("Failed to add period: \(error)")
         }
@@ -47,14 +47,14 @@ class PeriodDBManager: DBManager {
         do {
             for period in try db!.prepare(periods) {
                 
-                let period = Period.init(id: period[id], name: period[name], date: period[date], startTime: period[start], endTime: period[end], inThePast: (period[inThePast] != 0))
+                let period = Period.init(id: period[id], name: period[name])
                 
                 periodList += [period]
                 
                 //print("id: \(period[id]), name: \(period[name])")
             }
         } catch {
-            print("Failed to get period: \(error)")
+            print("Failed to get period list: \(error)")
         }
         
         return periodList

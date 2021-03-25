@@ -12,8 +12,4 @@ import os.log
 struct Period {
     let id: Int64
     let name: String
-    let date: String
-    let startTime: String
-    let endTime: String
-    let inThePast: Bool
 }

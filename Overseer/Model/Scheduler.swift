@@ -16,11 +16,21 @@ struct Schedulor {
     func add(name: String, lengthRequired: TimeInterval) {
         
         //calculate how many periods needed for task
-        var numberOfPeriods = lengthRequired/workPeriodLength
+        var numberOfPeriodsWithDecimal = lengthRequired/workPeriodLength
         
         //round up to whole number
-        numberOfPeriods.round(.up)
+        numberOfPeriodsWithDecimal.round(.up)
+        
+        var numberOfPeriods: Int = Int(numberOfPeriodsWithDecimal)
+        
+        var periodDBManager = PeriodDBManager()
+        
+        periodDBManager.createDB()
+        periodDBManager.createPeriodTable()
+        
+        for i in 1...numberOfPeriods {
+            
+            periodDBManager.addPeriod(name)
+        }
     }
-    
-    //add all sessions after the last period
 }

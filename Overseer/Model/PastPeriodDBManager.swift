@@ -6,7 +6,7 @@
 //  Copyright © 2021 joshuafan. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 import SQLite
 
 class PastPeriodDBManager: DBManager {
@@ -36,4 +36,56 @@ class PastPeriodDBManager: DBManager {
             print("Failed to create pastPeriod table: \(error)")
         }
     }
-}
+    
+    func addPastPeriod(_ periodName: String, _ periodDate: String, _ startTime: String, _ endTime: String) {
+        
+        do {
+            try db!.run(periods.insert(name <- periodName, date <- periodDate, start <- startTime, end <- endTime))
+        } catch {
+            print("Failed to add past period: \(error)")
+        }
+    }
+    
+    func getPastPeriods() -> [Period] {
+        
+        var periodList = [Period]()
+        
+        do {
+            for period in try db!.prepare(periods) {
+                
+                let period = Period.init(id: period[id], name: period[name], date: period[date], startTime: period[start], endTime: period[end], inThePast: (period[inThePast] != 0))
+                
+                periodList += [period]
+                
+                //print("id: \(period[id]), name: \(period[name])")
+            }
+        } catch {
+            print("Failed to get period: \(error)")
+        }
+        
+        return periodList
+    }
+    
+    func deletePastPeriod(_ idForPeriod: Int64) {
+        
+        // filters rows
+        let periodToBeDeleted = pastPeriods.filter(id == idForPeriod)
+        
+        do {
+            try db!.run(periodToBeDeleted.delete())
+        } catch {
+            print("Failed to delete row: \(error)")
+        }
+        
+    }
+    
+    // will be used in settings for reset
+    func deleteAllPastPeriods() {
+        
+        do {
+            try db!.run(pastPeriods.delete())
+        } catch {
+            print("Failed to clear periods: \(error)")
+        }
+    }
+}*/
