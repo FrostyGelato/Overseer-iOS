@@ -9,19 +9,19 @@
 import Foundation
 import SQLite
 
-// controls upcoming sessions
+// Controls upcoming sessions
 class PeriodDBManager: DBManager {
     
-    // set columns
+    // Sets column names and data type
     let id = Expression<Int64>("id")
     let name = Expression<String>("name")
     
-    // set table
+    // Sets table name
     let periods = Table("periods")
     
+    // Creates table
     func createPeriodTable() {
         
-        // create table
         do {
             try db!.run(periods.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
@@ -63,7 +63,7 @@ class PeriodDBManager: DBManager {
     
     func deletePeriod(_ idForPeriod: Int64) {
         
-        // filters rows
+        // Filters rows
         let periodToBeDeleted = periods.filter(id == idForPeriod)
         
         do {
@@ -74,7 +74,7 @@ class PeriodDBManager: DBManager {
         
     }
     
-    // will be used in settings for reset
+    // Will be used in settings for reset
     func deleteAllPeriods() {
         
         do {

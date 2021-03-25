@@ -11,22 +11,22 @@ import SQLite
 
 class TaskDBManager: DBManager {
     
-    // set columns
+    // Sets column names and data type
     let id = Expression<Int64>("id")
     let name = Expression<String>("name")
     let duration = Expression<String>("duration")
     let deadline = Expression<String>("deadline")
     
-    // set table
+    // Sets table name
     let tasks = Table("tasks")
     
-    // for conversion
+    // For conversion
     let dateFormatter = DateFormatter()
     let dateComponentFormatter = DateComponentsFormatter()
     
+    // Creates table
     func createTaskTable() {
         
-        // create table
         do {
             try db!.run(tasks.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
@@ -41,10 +41,10 @@ class TaskDBManager: DBManager {
     
     func addTask(_ taskName: String, _ timeRequired: TimeInterval, _ taskDeadline: Date) {
         
-        // convert TimeInterval to String
+        // Convert TimeInterval to String
         let durationString = dateComponentFormatter.string(from: timeRequired)
         
-        // converts Date to String
+        // Converts Date to String
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
         let deadlineString = dateFormatter.string(from: taskDeadline)
@@ -63,10 +63,10 @@ class TaskDBManager: DBManager {
         do {
             for task in try db!.prepare(tasks) {
                 
-                // convert String to TimeInterval
+                // Converts String to TimeInterval
                 let durationTimeInterval = task[duration].convertToTimeInterval()
                 
-                // convert String to Date
+                // Converts String to Date
                 let deadlineDate = dateFormatter.date(from: task[deadline])
                 
                 let task = Task.init(name: task[name], timeRequired: durationTimeInterval, deadline: deadlineDate!)
@@ -94,7 +94,7 @@ class TaskDBManager: DBManager {
     
     func deleteTask(_ idForTask: Int64) {
         
-        // filters rows
+        // Filters rows
         let taskToBeDeleted = tasks.filter(id == idForTask)
         
         do {
@@ -105,7 +105,7 @@ class TaskDBManager: DBManager {
         
     }
     
-    // will be used in settings for reset
+    // Will be used in settings for reset
     func deleteAllTasks() {
         
         do {

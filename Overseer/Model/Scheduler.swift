@@ -8,19 +8,21 @@
 
 import Foundation
 
+// Schedules periods
 struct Scheduler {
     
-    //needs to be fetched from preferences
+    // Needs to be fetched from preferences
     var workPeriodLength: Double = 1800
     
     func add(name: String, lengthRequired: TimeInterval) {
         
-        //calculate how many periods needed for task
+        // Calculates how many periods needed for task
         var numberOfPeriodsWithDecimal = lengthRequired/workPeriodLength
         
-        //round up to whole number
+        // Rounds number up to whole number
         numberOfPeriodsWithDecimal.round(.up)
         
+        // Number of periods needed for task to be finished
         var numberOfPeriods: Int = Int(numberOfPeriodsWithDecimal)
         
         var periodDBManager = PeriodDBManager()

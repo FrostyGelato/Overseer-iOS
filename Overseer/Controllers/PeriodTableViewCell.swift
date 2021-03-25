@@ -8,7 +8,7 @@
 
 import UIKit
 
-// determines layout for each individual period cell in main menu
+// Determines layout for each individual period cell in main menu
 class PeriodTableViewCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!

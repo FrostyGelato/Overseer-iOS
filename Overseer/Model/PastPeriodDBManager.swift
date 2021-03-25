@@ -9,7 +9,7 @@
 /*import Foundation
 import SQLite
 
-// controls past sessions
+// Controls past sessions
 class PastPeriodDBManager: DBManager {
     
     // set columns

@@ -150,8 +150,8 @@
 			children = (
 				0E9EE5652580C2A4006A680A /* DBManager.swift */,
 				0E08A4202580DDFE00850B2D /* PeriodDBManager.swift */,
-				0E6CD84D260C2E73003457E7 /* PastPeriodDBManager.swift */,
 				0E08A4222580DE9E00850B2D /* TaskDBManager.swift */,
+				0E6CD84D260C2E73003457E7 /* PastPeriodDBManager.swift */,
 				0EE831C0258109CD001DFA7D /* String.swift */,
 				0E1D1EE2260C082D00A3DBBA /* Scheduler.swift */,
 			);

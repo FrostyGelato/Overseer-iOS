@@ -9,7 +9,7 @@
 import Foundation
 import SQLite
 
-// superclass for PeriodDBManager and TaskDBManager
+// Superclass for PeriodDBManager and TaskDBManager
 class DBManager {
     
     // uses URLs
@@ -21,23 +21,25 @@ class DBManager {
         DBPath = directoryURL?.appendingPathComponent("db.sqlite3").relativePath
     }*/
     
-    // get path for DB
+    // DB's path
     let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
     
     var db:Connection?
     
+    // Creates database
     func createDB() {
         
         do {
             db = try Connection("\(path)/db.sqlite3")
             
-            // uses URLs and is preferred by Apple
+            // Uses URLs and is preferred by Apple
             //let db = try Connection(DBPath!)
+            
         } catch {
             print("Failed to create database: \(error)")
         }
         
-        // for manually viewing database
+        // Prints DB's path
         //print(path)
     }
 }

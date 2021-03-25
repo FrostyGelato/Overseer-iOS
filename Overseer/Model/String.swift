@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Converts String to TimeInterval
 extension String {
     func convertToTimeInterval() -> TimeInterval {
         guard self != "" else {

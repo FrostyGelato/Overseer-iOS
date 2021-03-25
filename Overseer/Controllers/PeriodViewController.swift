@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 
+// Controls new task menu
 class PeriodViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
@@ -25,16 +26,16 @@ class PeriodViewController: UIViewController, UITextFieldDelegate {
         
         nameField.delegate = self
         
-        //use old style date pickers
+        // Use old style date pickers
         timePicker.preferredDatePickerStyle = .wheels
         deadlinePicker.preferredDatePickerStyle = .wheels
-        //only include duration
+        // Only include duration
         timePicker.datePickerMode = .countDownTimer
         
         updateSaveButtonState()
     }
     
-    // sends data to PeriodTableViewController when save button is clicked
+    // Sends data to PeriodTableViewController when save button is clicked
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -57,18 +58,18 @@ class PeriodViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - UITextFieldDelegate
     
-    // disable save button when editing text field
+    // Disable save button when editing text field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         saveButton.isEnabled = false
     }
     
-    // if user ends editing and the text field is not nil, enable button
+    // If user ends editing and the text field is not nil, enable button
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
     }
     
-    // clicking enter ends editing
+    // Clicking enter ends editing
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameField.endEditing(true)
         return true

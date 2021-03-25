@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Main Menu
 class PeriodTableViewController: UITableViewController {
     
     //MARK: - Properties
@@ -33,7 +34,7 @@ class PeriodTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    // runs when save button is pressed
+    // Runs when save button in PeriodViewController is pressed
     @IBAction func refreshList(sender: UIStoryboardSegue) {
         
         if let sourceViewController = sender.source as? PeriodViewController, let task = sourceViewController.task {
@@ -45,7 +46,7 @@ class PeriodTableViewController: UITableViewController {
             taskManager.getTasks()
         }
         
-        // refresh list when user returns to main menu
+        // Refresh list when user returns to main menu
         refreshPeriodList()
     }
 
@@ -78,11 +79,11 @@ class PeriodTableViewController: UITableViewController {
     
     //MARK: - Private Methods
     
-    // refresh list (exclude initial loading)
+    // Refreshes list (exclude initial loading)
     private func refreshPeriodList() {
         
         periodList = periodDBManager.getPeriods()
-        // updates table view
+        // Updates table view
         self.tableView.reloadData()
     }
 
