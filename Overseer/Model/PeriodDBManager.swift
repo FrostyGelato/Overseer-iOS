@@ -9,6 +9,7 @@
 import Foundation
 import SQLite
 
+// controls upcoming sessions
 class PeriodDBManager: DBManager {
     
     // set columns

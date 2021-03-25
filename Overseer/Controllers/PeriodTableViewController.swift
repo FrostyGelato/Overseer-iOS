@@ -12,23 +12,19 @@ class PeriodTableViewController: UITableViewController {
     
     //MARK: - Properties
     
-    // temporary, will need to fetch from another class later on
     var periodList = [Period]()
+    let periodDBManager = PeriodDBManager()
 
     //MARK: - Navigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let periodManager = PeriodDBManager()
+        periodDBManager.createDB()
         
-        periodManager.createDB()
+        periodDBManager.createPeriodTable()
         
-        periodManager.createPeriodTable()
-        
-        //dbManager.addPeriod("Poster", "2020-12-9", "20:40:00.000", "21:10:00.000")
-        
-        periodList = periodManager.getPeriods()
+        periodList = periodDBManager.getPeriods()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,6 +44,9 @@ class PeriodTableViewController: UITableViewController {
             taskManager.addTask(task.name, task.timeRequired, task.deadline)
             taskManager.getTasks()
         }
+        
+        // refresh list when user returns to main menu
+        refreshPeriodList()
     }
 
     // MARK: - Table view data source
@@ -72,9 +71,19 @@ class PeriodTableViewController: UITableViewController {
         
         cell.icon.image = UIImage(systemName: "square")
         cell.nameLabel.text = period.name
-        cell.timeLabel.text = period.startTime + " - " + period.endTime
+        //cell.timeLabel.text = period.startTime + " - " + period.endTime
         
         return cell
+    }
+    
+    //MARK: - Private Methods
+    
+    // refresh list (exclude initial loading)
+    private func refreshPeriodList() {
+        
+        periodList = periodDBManager.getPeriods()
+        // updates table view
+        self.tableView.reloadData()
     }
 
     /*

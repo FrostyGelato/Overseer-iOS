@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Schedulor {
+struct Scheduler {
     
     //needs to be fetched from preferences
     var workPeriodLength: Double = 1800

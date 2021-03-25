@@ -45,6 +45,10 @@ class PeriodViewController: UIViewController, UITextFieldDelegate {
         }
         
         task = Task(name: nameField.text!, timeRequired: timePicker.countDownDuration, deadline: deadlinePicker.date)
+        
+        var scheduler = Scheduler()
+        
+        scheduler.add(name: nameField.text!, lengthRequired: timePicker.countDownDuration)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
