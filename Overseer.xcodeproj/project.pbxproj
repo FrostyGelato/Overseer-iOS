@@ -16,6 +16,7 @@
 		0E41E6D924DDA5CE005C6890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E41E6D724DDA5CE005C6890 /* Main.storyboard */; };
 		0E41E6DB24DDA5CF005C6890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E41E6DA24DDA5CF005C6890 /* Assets.xcassets */; };
 		0E41E6DE24DDA5CF005C6890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E41E6DC24DDA5CF005C6890 /* LaunchScreen.storyboard */; };
+		0E6CD84E260C2E73003457E7 /* PastPeriodDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6CD84D260C2E73003457E7 /* PastPeriodDBManager.swift */; };
 		0E9EE5622580C0CC006A680A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9EE54C2580C097006A680A /* SQLite.framework */; };
 		0E9EE5632580C0CC006A680A /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9EE54C2580C097006A680A /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0E9EE5662580C2A4006A680A /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9EE5652580C2A4006A680A /* DBManager.swift */; };
@@ -104,6 +105,7 @@
 		0E41E6DA24DDA5CF005C6890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E41E6DD24DDA5CF005C6890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E41E6DF24DDA5CF005C6890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6CD84D260C2E73003457E7 /* PastPeriodDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastPeriodDBManager.swift; sourceTree = "<group>"; };
 		0E9EE5412580C097006A680A /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Resources/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		0E9EE5652580C2A4006A680A /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		0EBFAD38253EBB9B00CEE5B8 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				0E9EE5652580C2A4006A680A /* DBManager.swift */,
 				0E08A4202580DDFE00850B2D /* PeriodDBManager.swift */,
+				0E6CD84D260C2E73003457E7 /* PastPeriodDBManager.swift */,
 				0E08A4222580DE9E00850B2D /* TaskDBManager.swift */,
 				0EE831C0258109CD001DFA7D /* String.swift */,
 				0E1D1EE2260C082D00A3DBBA /* Scheduler.swift */,
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6CD84E260C2E73003457E7 /* PastPeriodDBManager.swift in Sources */,
 				0EF7AE6E25432D530029F60A /* Task.swift in Sources */,
 				0EE831C1258109CD001DFA7D /* String.swift in Sources */,
 				0E41E6D624DDA5CE005C6890 /* PeriodViewController.swift in Sources */,

@@ -14,10 +14,6 @@ class PeriodDBManager: DBManager {
     // set columns
     let id = Expression<Int64>("id")
     let name = Expression<String>("name")
-    let date = Expression<String>("date")
-    let start = Expression<String>("starttime")
-    let end = Expression<String>("endtime")
-    let inThePast = Expression<Int64>("inthepast")
     
     // set table
     let periods = Table("periods")
@@ -29,10 +25,6 @@ class PeriodDBManager: DBManager {
             try db!.run(periods.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
                 t.column(name, unique: true)
-                t.column(date)
-                t.column(start)
-                t.column(end)
-                t.column(inThePast, defaultValue: 0)
             })
         } catch {
             print("Failed to create Period table: \(error)")
