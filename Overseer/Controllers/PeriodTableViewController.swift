@@ -15,6 +15,7 @@ class PeriodTableViewController: UITableViewController {
     
     var periodList = [Period]()
     let periodDBManager = PeriodDBManager()
+    let settings = Settings()
 
     //MARK: - Navigation
     
@@ -69,7 +70,7 @@ class PeriodTableViewController: UITableViewController {
         
         cell.icon.image = UIImage(systemName: "square")
         cell.nameLabel.text = period.name
-        //cell.timeLabel.text = period.startTime + " - " + period.endTime
+        cell.timeLabel.text = "\(settings.getWorkPeriodLength()) minutes"
         
         return cell
     }

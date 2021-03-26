@@ -24,6 +24,7 @@
 		0EBFAD3C253EED7400CEE5B8 /* PeriodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAD3B253EED7400CEE5B8 /* PeriodTableViewController.swift */; };
 		0EBFAD40253EEEF900CEE5B8 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAD3F253EEEF900CEE5B8 /* Period.swift */; };
 		0EE831C1258109CD001DFA7D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE831C0258109CD001DFA7D /* String.swift */; };
+		0EF370C6260D912400C8ADD6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF370C5260D912400C8ADD6 /* Settings.swift */; };
 		0EF7AE6E25432D530029F60A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7AE6D25432D530029F60A /* Task.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		0EBFAD3B253EED7400CEE5B8 /* PeriodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodTableViewController.swift; sourceTree = "<group>"; };
 		0EBFAD3F253EEEF900CEE5B8 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		0EE831C0258109CD001DFA7D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0EF370C5260D912400C8ADD6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0EF7AE6D25432D530029F60A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				0E6CD84D260C2E73003457E7 /* PastPeriodDBManager.swift */,
 				0EE831C0258109CD001DFA7D /* String.swift */,
 				0E1D1EE2260C082D00A3DBBA /* Scheduler.swift */,
+				0EF370C5260D912400C8ADD6 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				0EF7AE6E25432D530029F60A /* Task.swift in Sources */,
 				0EE831C1258109CD001DFA7D /* String.swift in Sources */,
 				0E41E6D624DDA5CE005C6890 /* PeriodViewController.swift in Sources */,
+				0EF370C6260D912400C8ADD6 /* Settings.swift in Sources */,
 				0E41E6D224DDA5CE005C6890 /* AppDelegate.swift in Sources */,
 				0EBFAD3C253EED7400CEE5B8 /* PeriodTableViewController.swift in Sources */,
 				0EBFAD39253EBB9B00CEE5B8 /* PeriodTableViewCell.swift in Sources */,
