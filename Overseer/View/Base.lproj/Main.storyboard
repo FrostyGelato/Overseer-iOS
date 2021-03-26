@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOV-kR-Io9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guw-G4-xx0">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -230,10 +230,45 @@
             </objects>
             <point key="canvasLocation" x="307.69230769230768" y="137.91469194312796"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
+        <scene sceneID="hlQ-6l-YWG">
+            <objects>
+                <viewController id="ttO-cz-FYH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jIe-kp-6dC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Evg-MW-gIR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Kxv-jr-MvK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tul-W5-A42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-602" y="867"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MXv-z4-dL5">
+            <objects>
+                <tabBarController id="guw-G4-xx0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PdE-4M-nUk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dOV-kR-Io9" kind="relationship" relationship="viewControllers" id="CSu-z7-JRr"/>
+                        <segue destination="ttO-cz-FYH" kind="relationship" relationship="viewControllers" id="bgf-fr-ObB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgb-9d-EG9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1526" y="472"/>
+        </scene>
+        <!--Tasks-->
         <scene sceneID="Tqb-Xg-cdq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dOV-kR-Io9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" image="timer" catalog="system" id="VFa-fX-kfm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EPF-Ki-qGV">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -268,7 +303,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="square" catalog="system" width="128" height="114"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
