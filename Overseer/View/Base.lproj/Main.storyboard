@@ -60,7 +60,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ahm-9n-XiB">
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahm-9n-XiB">
                                                                 <rect key="frame" x="0.0" y="66.333333333333343" width="390" height="216.00000000000003"/>
                                                             </datePicker>
                                                         </subviews>
@@ -83,7 +83,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gk3-wU-7nl">
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="gk3-wU-7nl">
                                                                 <rect key="frame" x="0.0" y="57.666666666666686" width="390" height="216"/>
                                                             </datePicker>
                                                         </subviews>
@@ -233,18 +233,81 @@
         <!--Settings-->
         <scene sceneID="hlQ-6l-YWG">
             <objects>
-                <viewController id="ttO-cz-FYH" sceneMemberID="viewController">
+                <viewController id="ttO-cz-FYH" customClass="SettingsViewController" customModule="Overseer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jIe-kp-6dC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xtf-JD-byP">
+                                <rect key="frame" x="0.0" y="44" width="390" height="400"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-ed-Kkt">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lB-Nu-8a2">
+                                                <rect key="frame" x="140" y="0.0" width="250" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Period:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRM-lx-3pK">
+                                                <rect key="frame" x="10" y="90" width="97.666666666666671" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="aQW-DY-Any"/>
+                                            <constraint firstItem="fRM-lx-3pK" firstAttribute="leading" secondItem="QBv-ed-Kkt" secondAttribute="leading" constant="10" id="eQE-V7-ACb"/>
+                                            <constraint firstItem="fRM-lx-3pK" firstAttribute="centerY" secondItem="QBv-ed-Kkt" secondAttribute="centerY" id="w48-gY-Jli"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHD-FJ-wRm">
+                                        <rect key="frame" x="0.0" y="200" width="390" height="200"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tp8-mA-ND4">
+                                                <rect key="frame" x="132" y="0.0" width="250" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Period:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs9-bj-YN4">
+                                                <rect key="frame" x="10" y="90" width="101.66666666666667" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Net-qw-KVG"/>
+                                            <constraint firstItem="cs9-bj-YN4" firstAttribute="centerY" secondItem="fHD-FJ-wRm" secondAttribute="centerY" id="bST-Tx-TPj"/>
+                                            <constraint firstItem="cs9-bj-YN4" firstAttribute="leading" secondItem="fHD-FJ-wRm" secondAttribute="leading" constant="10" id="jEa-o3-RaK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fHD-FJ-wRm" secondAttribute="trailing" id="O7W-bb-def"/>
+                                    <constraint firstItem="fHD-FJ-wRm" firstAttribute="leading" secondItem="Xtf-JD-byP" secondAttribute="leading" id="Va1-TD-YPf"/>
+                                    <constraint firstItem="fHD-FJ-wRm" firstAttribute="top" secondItem="QBv-ed-Kkt" secondAttribute="bottom" id="Zbe-ea-Nyt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Evg-MW-gIR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xtf-JD-byP" firstAttribute="top" secondItem="Evg-MW-gIR" secondAttribute="top" id="2Li-ay-PCp"/>
+                            <constraint firstItem="Xtf-JD-byP" firstAttribute="leading" secondItem="Evg-MW-gIR" secondAttribute="leading" id="bku-4n-UD5"/>
+                            <constraint firstItem="Evg-MW-gIR" firstAttribute="trailing" secondItem="Xtf-JD-byP" secondAttribute="trailing" id="vZE-Kv-98z"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Kxv-jr-MvK"/>
+                    <connections>
+                        <outlet property="breakLengthPicker" destination="tp8-mA-ND4" id="IZ4-di-Ycv"/>
+                        <outlet property="workLengthPicker" destination="4lB-Nu-8a2" id="Mxd-4S-sPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tul-W5-A42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-602" y="867"/>
+            <point key="canvasLocation" x="-603.07692307692309" y="866.5876777251184"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MXv-z4-dL5">

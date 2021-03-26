@@ -15,7 +15,7 @@ class PeriodTableViewController: UITableViewController {
     
     var periodList = [Period]()
     let periodDBManager = PeriodDBManager()
-    let settings = Settings()
+    let settings = SettingsManager()
 
     //MARK: - Navigation
     

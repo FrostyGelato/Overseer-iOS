@@ -26,12 +26,6 @@ class PeriodViewController: UIViewController, UITextFieldDelegate {
         
         nameField.delegate = self
         
-        // Use old style date pickers
-        timePicker.preferredDatePickerStyle = .wheels
-        deadlinePicker.preferredDatePickerStyle = .wheels
-        // Only include duration
-        timePicker.datePickerMode = .countDownTimer
-        
         updateSaveButtonState()
     }
     
